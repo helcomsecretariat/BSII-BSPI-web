@@ -1,0 +1,441 @@
+html, body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	font-family: "Source Sans Pro", sans-serif;
+	color: #00497F;
+}
+
+body {
+	background-color: white;
+	overflow: hidden;
+}
+
+#mainWindow {
+	width: 100%;
+	height: 100%;
+}
+
+#screenCover {
+	position: absolute;
+	top:0;
+	left:0;
+	z-index: 99;
+	width: 100%;
+	height: 100%;
+	background-color: #ccc;
+	opacity: 0.5;
+	display: none;
+}
+
+#loadingCover {
+  position: absolute;
+  top:0;
+  left:0;
+  z-index: 98;
+  width: 100%;
+  height: 100%;
+  background-color: #ccc;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url('../img/loading.gif');
+  /*background-image: url('../img/easter.png');*/
+  opacity: 0.4;
+	display: block;
+}
+
+/* START header section */
+#header {
+	border-bottom: solid 4px #00497F;
+	background-color: #B2C8D8;
+	text-align: left;
+	height: 60px;
+}
+
+#helcomlogocontainer {
+  background-image: url("../img/HELCOM_logo_white_h50.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 240px;
+  height: 60px;
+  float: right;
+  text-decoration: none;
+  cursor: pointer;
+  display: block;
+}
+
+#pbslogocontainer {
+  background-image: url("../img/Logo_PBS_EU_White_227x60.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 240px;
+  height: 60px;
+  float: right;
+  text-decoration: none;
+  cursor: pointer;
+  display: block;
+}
+
+#titlecontainer {
+  color: white;
+  font-size: 20pt;
+  float: left;
+  margin-top: 10px;
+  margin-left: 50px;
+  text-decoration: none;
+  cursor: pointer;
+  display: block;
+}
+
+.headerLink {
+	font-size: 16px;
+	color: #00497F;
+	cursor: pointer;
+	float: right;
+	margin-left: 10px;
+	text-decoration: none;
+}
+
+.headerLink:hover {
+ 	color: white;
+}
+/* END header section */
+
+/* START center view section */
+#leftPane{
+  padding: 2px;
+  width: 100%;
+}
+
+#map {
+	margin: 0;
+	padding: 0;
+	background-color: #CFD3D4;
+}
+
+#legendDiv {
+	position: absolute;
+	right: 70px;
+	top: 20px;
+	z-index: 100;
+	max-width: 280px;
+	background-color: #CFD3D4;
+	opacity: 0.8;
+	padding: 5px;
+	display: none;
+}
+
+.legendRow {
+  margin: 0;
+  margin-bottom: 5px;
+  padding: 0;
+  vertical-align: middle;
+  min-height: 20px;
+  background-repeat: no-repeat;
+  background-position: left;
+  font-size: 11px;
+}
+
+.esriBasemapGalleryLabelContainer {
+  display: none;
+}
+/* END center view section */
+
+/* START startup box */
+#startupBox{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+	margin-top: -15%;
+	margin-left: -30%;
+	width: 60%;
+	height: 60%;
+  color: #00365C;
+  border: 3px solid #00497F;
+	background-color: #FFF;
+  z-index: 100;
+  display: none;
+}​
+
+.startupWindow {
+  width: 100%;
+  height: 100%;
+}
+
+#startupHeader {
+  text-align: center;
+  font-size: 22px;
+	font-family: 'Share', cursive;
+  background-color: #B2C8D8;
+  color: white;
+	height: 10%;
+}
+
+#startupFooter {
+	position:absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #B2C8D8;
+  color: white;
+	height: 10%;
+	width: 100%;
+	text-align: center;
+}
+
+#startupScrollContainer {
+	position: relative;
+	height: 80%;
+	overflow: auto;
+	padding: 0px 10px;
+}
+
+#startupNoteMessage {
+  text-align: center;
+  font-size: 20px;
+  color: #00AB97;
+}
+
+#startupButtonsContainer {
+  margin: 10px 0px;
+  width: 100%;
+  text-align: center;
+}
+
+#startupButton {
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 14px;
+  width: 100px;
+  display:inline-block;
+  background-color: #00497F;
+  color: white;
+}
+
+#startupButton:hover {
+  font-weight: bold;
+  background-color: #00365C;
+}
+/* END startup box */
+
+/* START left panel */
+#leftPanelContainer {
+  width: 100%;
+  border-right: 2px solid #00497F;
+}
+
+.leftPanelLink {
+  cursor: pointer;
+  margin-top: 10px;
+  text-decoration: underline;
+  color: #00497F;
+  font-size: 14px;
+}
+
+.leftPanelLink:hover {
+  font-weight: bold;
+}
+
+.downloadButton {
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 14px;
+}
+
+.downloadButton:hover {
+	font-weight: bold;
+}
+
+.searchTaskButton {
+  cursor: pointer;
+  margin-top: 10px;
+  margin-right: 20px;
+  display: inline-block;
+  float: right;
+  text-decoration: underline;
+  font-size: 14px;
+}
+
+.searchTaskButton:hover {
+	font-weight: bold;
+}
+
+.inputSection {
+	border: 1px solid #00497F;
+	border-radius: 4px;
+}
+.searchInput {
+	font-size: 16px;
+  background-color: #FFF !important;
+	border-width: 0;
+  margin: 2px;
+	width: 95%;
+}
+
+.searchInput:hover {
+  background-color: #FFF;
+}
+/* SEARCH title panes */
+.titlePaneSection {
+	margin-left: 10%;
+	display: inline-block;
+	width: 35%;
+}
+
+.titlePaneSection .dijitTitlePane {
+	border: 1px solid #00497F;
+	border-radius: 4px;
+}
+
+.titlePaneSection .dijitTitlePaneTitle {
+	font-size: 14px;
+	color: #00497F;
+}
+/* SEARCH title panes */
+
+/* SEARCH multiselects */
+.dojoxCheckedMultiSelect {
+	height: 150px;
+}
+
+.dojoxCheckedMultiSelect .dojoxCheckedMultiSelectWrapper {
+	height: 100%;
+}
+
+.dojoxCheckedMultiSelectWrapper{
+	width: 100%;
+}
+
+.dojoxMultiSelectItemLabel {
+	font-size: 12px;
+	white-space: normal;
+}
+
+.dojoxMultiSelectItem  {
+	margin-left: 5px;
+	width: 95%;
+}
+/* SEARCH multiselects */
+
+/* END left panel */
+
+
+#helcomosparmap {
+	background-image: url("../img/Helcom_Ospar_Joint_map.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 848px;
+  height: 631px;
+  margin: 25px 25%;
+}
+
+#gridContent .dojoxGridMasterView {
+	max-height: 400px;
+	overflow: auto;
+}
+
+#gridContent .dojoxGridCell {
+	font-family: "Source Sans Pro", sans-serif;
+}
+
+#gridContent .dojoxGridCell .dojoxGridCellOver {
+	background: #FFF;
+}
+
+#gridContent .dojoxGridRowOver .dojoxGridCell {
+	background: #FFF;
+}
+
+#gridContent .dojoxGridRowSelected .dojoxGridCell {
+	background: #FFF;
+}
+
+#gridContent .dojoxGridHeader .dojoxGridCell {
+	background: #FFF;
+	font-weight: bold;
+}
+
+#gridContent .dojoxGridHeader .dojoxGridCellOver {
+	background: #FFF;
+	font-weight: bold;
+}
+
+#gridContent .dojoxGridCellOver .dojoxGridSortNode {
+	background: #FFF;
+	font-weight: bold;
+}
+
+.firstCol {
+	font-weight: bold;
+}
+
+.selectPort {
+	font-size: 16px;
+	width: 200px;
+	border-width: 0px;
+	border-radius: 4px;
+}
+
+.selectPort .dijitButtonNode {
+	width: 10%;
+}
+
+.bsiiButton {
+    border: 2px solid #00365C;
+    background-color: #004A7F;
+		border-radius: 4px;
+    cursor: pointer;
+    width: 160px;
+    height: 27px;
+    line-height: 27px;
+    color: white;
+		font-size: 16px;
+    text-align: center;
+    margin: 10px 10px;
+}
+
+.bsiiButton:hover {
+	font-weight: bold;
+}
+
+.layerListTree {
+  max-height: 90%;
+  overflow: auto;
+}
+
+.popupTable {
+	border: 1px solid #ccc;
+	border-collapse: collapse;
+}
+
+.popupTable td {
+	border: 1px solid #ccc;
+	padding: 5px;
+}
+
+.LayerSwipe .vertical {
+	width: 0;
+}
+
+.LayerSwipe .vertical .handle {
+	width: 12px;
+	height: 24px;
+	margin: -12px 0 0 -6px;
+}
+
+.dijitTreeLabel {
+	width: 70%;
+	display: inline-block;
+	white-space: normal;
+	vertical-align: middle;
+}
+
+.metadataButton {
+  background-image: url("../img/documentIcon16.png");
+  background-repeat: no-repeat;
+  background-position: left;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  cursor: pointer;
+  float: right;
+}

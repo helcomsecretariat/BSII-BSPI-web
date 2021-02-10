@@ -1,0 +1,47 @@
+<div>
+	<div style="font-size: 28px; margin: 25px 25%; text-align: justify; text-justify: inter-word;"> Baltic Sea Impact Index tool (BSII tool) </div>
+	<div style="margin: 25px 25%; font-size: 14px; text-align: justify; text-justify: inter-word;">
+		With the BSII tool it is possible to calculate the Baltic Sea Impact Index and the Baltic Sea Pressure Index, by using the 18 aggregated pressure layers and the 36 ecosystem component layers used in the State of the Baltic Sea report (HOLAS II). The tool uses the data layers, as well as a sensitivity scores matrix as input, and creates a BSPI or BSII grid layer as output.
+	</div>
+	<div style="font-weight: bold; font-size: 14px; margin: 25px 25%; text-align: justify; text-justify: inter-word;">
+		Baltic Sea Impact Index
+	</div>
+	<div style="margin: 25px 25%; font-size: 14px; text-align: justify; text-justify: inter-word;">
+		Baltic Sea Impact Index calculates the spatial distribution of cumulative impacts on the Baltic Sea. The BSII builds on concepts developed by Halpern et al. (2008), and was first applied in the initial HELCOM holistic assessment. The impact index is calculated based on the sum of all impacts in one assessment unit, for all ecosystem components, as shown below (where PL = pressure layer, n = the number of pressures, EC = ecosystem components, m = the number of ecosystem components, and SS = the sensitivity of each ecosystem component to each pressure):
+	</div>
+	<img src="img\bsii_formula.jpg" style="margin-left: 25%;"></img>
+	<div style="font-weight: bold; font-size: 14px; margin: 25px 25%; text-align: justify; text-justify: inter-word;">
+		Baltic Sea Pressure Index
+	</div>
+	<div style="margin: 25px 25%; font-size: 14px; text-align: justify; text-justify: inter-word;">
+		Baltic Sea Pressure Index calculates the cumulative pressures of human activities to the Baltic Sea. The BSPI uses the same aggregated pressure layers than BSII, but doesn’t consider the ecosystem components in the calculation. However, the pressures are weighted based on the average sensitivity score of all ecosystem components to each aggregated pressure layers. This is done to avoid overestimation of pressures with large extent, but low effect to ecosystem. Weighting is inbuilt in the tool, and can not be changed in the web tool.
+	</div>
+	<div style="margin: 25px 25%; font-size: 14px; text-align: justify; text-justify: inter-word;">
+		The BSPI is also based on the concept based on Halpern et al. in 2008. The BSPI is calculated as the sum of all pressure in one 1x1 km assessment unit, as shown below (where PL = pressure layer, n = the number of pressures, m = the number of ecosystem components, and SS = the sensitivity of each ecosystem component to each pressure).
+	</div>
+	<img src="img\bspi_formula.jpg" style="margin-left: 25%;"></img>
+	<div style="font-weight: bold; font-size: 14px; margin: 25px 25%; text-align: justify; text-justify: inter-word;">
+		How to use the tool
+	</div>
+	<div style="margin: 25px 25% 5px; font-size: 14px; text-align: justify; text-justify: inter-word;">
+		“Layers” tab
+	</div>
+	<div style="margin: 5px 25%; font-size: 14px; text-align: justify; text-justify: inter-word;">
+		Contains the pressure and ecosystem components spatial layers available for the calculation. These layers comprise of the data that were used in BSII for the State of Baltic Sea report (2018). Next to each layer there is a metadata button which redirect to HELCOM Metadata catalogue, where one can read more information about the layer and download it.<br/>By selecting individual layers one can view them on the map. When layer(s) are added to the map one can click specific map location and get layer's value at that location.
+	</div>
+	<div style="margin: 25px 25% 5px; font-size: 14px; text-align: justify; text-justify: inter-word;">
+		“Calculation” tab
+	</div>
+	<div style="margin: 5px 25%; font-size: 14px; text-align: justify; text-justify: inter-word;">
+		One can choose to calculate BSII or BSPI. Then choose layers to include in the calculation.<br/>For the BSII, after selecting the layers and by pressing “Get Sensitivity Scores”, the predefined sensitivity score matrix appears below, and the sensitivity scores can also be edited through this matrix. By pressing “Calculate BSII” the tool will calculate the result BSII raster and BSII statistics matrix.<br/>For the BSPI, after selecting the layers and by pressing “Calculate BSPI” the tool will calculate the result BSPI raster.<br/> Calculated result layers will appear on the map pane on the right side. In the map top right corner a box with layer's legend, download links and map tools will appear. By clicking specific map location one can get layer's value at that location.<br/>BSII and BSPI layers on the map always appear on top of the individual ecosystem component and pressure layers (if those are selected). By using “Show BSII/BSPI layer on top” tool one can change order the layers are displayed. By using “Swipe top layer” tool one can enable/disable swipe slider, which allows to view the layer below the top one.
+	</div>
+	<div style="font-weight: bold; font-size: 14px; margin: 25px 25%; text-align: justify; text-justify: inter-word;">
+		Metadata and further reading
+	</div>
+	<div style="margin: 25px 25%; font-size: 14px; text-align: justify; text-justify: inter-word;">
+		The metadata descriptions of the Aggregated pressure layers and ecosystem components can be accessed through <a href="http://metadata.helcom.fi/geonetwork/srv/eng/catalog.search#/home" target="_blank">HELCOM metadata catalogue</a> and the map layers can be viewed at <a href="http://maps.helcom.fi/website/mapservice/" target="_blank">HELCOM Map and Data Service</a>. More information about the tool, methodology and data used can be found at the <a href="http://stateofthebalticsea.helcom.fi/" target="_blank">State of the Baltic Sea report website</a> and from the thematic report on <a href="http://stateofthebalticsea.helcom.fi/wp-content/uploads/2019/09/BSEP159-Cumulative-impacts.pdf" target="_blank">cumulative impacts</a>. Please note: All descriptions of results, layers and sensitivity scores are described as they were used in the Baltic Sea Impact Index produced for the State of the Baltic Sea report (2018).
+	</div>
+	<div style="margin: 25px 25%; font-size: 14px; text-align: justify; text-justify: inter-word;">
+		Tool was developed within <a href="http://www.panbalticscope.eu/" target="_blank">Pan Baltic Scope </a> project. Desktop version of the tool, a toolbox for ArcGIS Pro software, includes more tools than BSII and BSPI and can be downloaded from <a href="https://github.com/helcomsecretariat/Cumulative-impact-Assessment-Toolbox" target="_blank">HELCOM GitHub</a> account. 
+	</div>
+</div>
