@@ -275,11 +275,11 @@ body {
   background-color: #FFF;
 }
 /* SEARCH title panes */
-.titlePaneSection {
+/*.titlePaneSection {
 	margin-left: 10%;
 	display: inline-block;
 	width: 35%;
-}
+}*/
 
 .titlePaneSection .dijitTitlePane {
 	border: 1px solid #00497F;
@@ -328,10 +328,10 @@ body {
   margin: 25px 25%;
 }
 
-#gridContent .dojoxGridMasterView {
+/*#gridContent .dojoxGridMasterView {
 	max-height: 400px;
 	overflow: auto;
-}
+}*/
 
 #gridContent .dojoxGridCell {
 	font-family: "Source Sans Pro", sans-serif;
@@ -384,13 +384,13 @@ body {
     background-color: #004A7F;
 		border-radius: 4px;
     cursor: pointer;
-    width: 160px;
+    width: 140px;
     height: 27px;
     line-height: 27px;
     color: white;
-		font-size: 16px;
+		font-size: 14px;
     text-align: center;
-    margin: 10px 10px;
+    margin: 10px 0px;
 }
 
 .bsiiButton:hover {

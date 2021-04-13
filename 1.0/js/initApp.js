@@ -19,8 +19,6 @@ define([
 		loaded: false,
 
 		constructor: function() {
-			//this.showStartupBox();
-
 			on(dijit.byId("cpi"), "show", function() {
 				document.getElementById("leftPane").style.width = "100%";
 				dijit.byId("mainWindow").resize();
@@ -43,16 +41,9 @@ define([
 				.then(lang.hitch(this, function(text) {
 					document.getElementById("loadingCover").style.display = "none";
 					console.log("config fetched");
-					var resp = JSON.parse(text);
-					this.mM = new mapManager({mapNode: "map", services: resp.services, metadata: resp.metadata, layerNames: resp.layerNames});
+					let resp = JSON.parse(text);
+					this.mM = new mapManager({mapNode: "map", services: resp.services, ecConfig: resp.EC, plConfig: resp.PL});
 				}));
-		}/*,
-
-		showStartupBox: function() {
-			var startupBoxDiv = dom.byId("startupBox");
-			document.getElementById("screenCover").style.display = "block";
-			document.getElementById("startupBox").style.display = "block";
-			var startBox = new startupWindow().placeAt(startupBoxDiv);
-		}*/
+		}
 	});
 });

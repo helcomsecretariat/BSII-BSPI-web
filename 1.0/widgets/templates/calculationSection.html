@@ -1,29 +1,62 @@
 <div>
-	<div style="font-size: 28px; margin: 25px 10%; text-align: justify; text-justify: inter-word;"> BSII and BSPI calculation</div>
-	<div id="bsiiModeButton" class="bsiiButton" style="margin-left: 10%; display: inline-block;">BSII calculation</div>
-	<div id="bspiModeButton" class="bsiiButton" style="margin-left: 10%; display: inline-block;">BSPI calculation</div>
-	<div id="bsiiModeMessages" style="display: none;">
-		<div style="margin: 25px 10%;">
-			Baltic Sea Impact Index calculation tool
+	<div id="toolSettings" style="margin: 0px 10%; width: 80%;">
+		<div style="font-size: 28px; margin: 25px 0px; text-align: justify; text-justify: inter-word;"> BSII and BSPI calculation</div>
+		<div id="bsiiModeButton" class="bsiiButton" style="display: inline-block;">BSII</div>
+		<div id="bspiSumModeButton" class="bsiiButton" style="margin-left: 5%; display: inline-block;">BSPI (sum)</div>
+		<div id="bspiWeightedModeButton" class="bsiiButton" style="margin-left: 5%; display: inline-block;">BSPI (weighted sum)</div>
+		<div id="bsiiModeMessages" style="display: none;">
+			<div style="margin: 25px 0px;">
+				Baltic Sea Impact Index calculation tool
+			</div>
+			<div style="font-weight: bold; margin: 25px 0px; text-align: justify; text-justify: inter-word;"> Select Ecosystem component and Pressure layers to include in calculation </div>
 		</div>
-		<div style="font-weight: bold; margin: 25px 10%; text-align: justify; text-justify: inter-word;"> Select Ecosystem component and Pressure layers to include in calculation </div>
-	</div>
-	<div id="bspiModeMessages" style="display: none;">
-		<div style="margin: 25px 10%;">
-			Baltic Sea Pressure Index calculation tool
+		<div id="bspiSumModeMessages" style="display: none;">
+			<div style="margin: 25px 0px;">
+				Baltic Sea Pressure Index calculation tool (sum method)
+			</div>
+			<div style="font-weight: bold; margin: 25px 0px; text-align: justify; text-justify: inter-word;"> Select Pressure layers to include in calculation </div>
 		</div>
-		<div style="font-weight: bold; margin: 25px 10%; text-align: justify; text-justify: inter-word;"> Select Pressure layers to include in calculation </div>
+		<div id="bspiWeightedModeMessages" style="display: none;">
+			<div style="margin: 25px 0px;">
+				Baltic Sea Pressure Index calculation tool (weighted sum method)
+			</div>
+			<div style="font-weight: bold; margin: 25px 0px; text-align: justify; text-justify: inter-word;"> Select Ecosystem component and Pressure layers to include in calculation </div>
+		</div>
+		<div id="ecGroupSection" class="titlePaneSection" style="width: 45%; float: left; display: none;"></div>
+		<div id="plGroupSection" class="titlePaneSection" style="width: 45%; float: right; display: none;"></div>
+		<div style="clear: both;">
+			<div id="getLayersForGridButton" class="bsiiButton" style="margin-left: 0px; display: none;">Get Sensitivity Scores</div>
+			<span id="resetSensitivityScores" class="leftPanelLink" style="margin-left: 10px; display: none;">Reset sensitivity scores</span>
+			<div id="layersSelectionError" style="margin: 10px 0px; color: red; display: none;">Select at least 2 Ecosystem component and 2 Pressure layers to include in BSII calculation.</div>
+			<div id="plLayersSelectionError" style="margin: 10px 0px; color: red; display: none;">Select at least 2 Pressure layers to include in BSPI calculation.</div>
+			<div id="ssMessage" style="margin: 10px 0px; display: none;">Default sensitivity scores for selected layers are displayed in the table below. Sensitivity scores can be edited directly in the table. Edited values will be used in BSII calculation. Use <b>Calculate BSII</b> button below to calculate BSII.</div>
+			<div id="gridContainer" style="height: 400px; width: 100%;"></div>
+			<div id="calculateMessage" style="font-size: 14px; color: #800000; display: none;">Calculating index, please wait. This should not take longer than a minute.</div>
+			<div id="calculateBsiiButton" class="bsiiButton" style="display: none;">Calculate BSII</div>
+			<div id="calculateBspiSumButton" class="bsiiButton" style="display: none;">Calculate BSPI</div>
+			<div id="calculateBspiWeightedButton" class="bsiiButton" style="display: none;">Calculate BSPI</div>
+		</div>
 	</div>
-	<div id="ecGroupSection" class="titlePaneSection" style="display: none;"></div>
-	<div id="plGroupSection"class="titlePaneSection" style="display: none;"></div>
-	<div id="getLayersForGridButton" class="bsiiButton" style="margin-left: 10%; display: none;">Get Sensitivity Scores</div>
-	<span id="resetSensitivityScores" class="leftPanelLink" style="display: none;">Reset sensitivity scores</span>
-	<div id="layersSelectionError" style="margin: 10px 10%; color: red; display: none;">Select at least 2 Ecosystem component and 2 Pressure layers to include in BSII calculation.</div>
-	<div id="plLayersSelectionError" style="margin: 10px 10%; color: red; display: none;">Select at least 2 Pressure layers to include in BSPI calculation.</div>
-	<div id="ssMessage" style="margin: 10px 10%; display: none;">Default sensitivity scores for selected layers are displayed in the table below. Sensitivity scores can be edited directly in the table. Edited values will be used in BSII calculation. Use <b>Calculate BSII</b> button below to calculate BSII.</div>
-	<div id="gridContainer" style="margin: 10px 10%;"></div>
-	<div id="calculateMessage" style="margin-left: 10%; font-size: 14px; color: #800000; display: none;">Calculating index, please wait. This should not take longer than a minute.</div>
-	<div id="calculateBsiiButton" class="bsiiButton" style="margin-left: 10%; display: none;">Calculate BSII</div>
-	<div id="calculateBspiButton" class="bsiiButton" style="margin-left: 10%; display: none;">Calculate BSPI</div>
-
+	<div id="identifyResults" style=" margin: 10px 10%; display: none;">
+		<div id="backToSettingsTop" class="leftPanelLink" style="float: right; font-size: 12px;">Back to calculation settings</div>
+		<div style="font-size: 18px; clear: both;"> Location information</div>
+		<div id="bsiiMessage" style="font-size: 16px; text-align: center; padding-top: 10px; margin-bottom: 10px; display: none"></div>
+		<div id="ecBsiiChartContainer" style="width: 45%; border: solid 1px #ccc; float: left; display: none;">
+			<div style="font-size: 12px; text-align: center; margin-top: 5px;">Ecosystem components contribution to BSII</div>
+			<div id="ecBsiiChart" style="width: 95%; height: 200px;"></div>
+			<div id="ecBsiiChartLegend"></div>
+		</div>
+		<div id="plBsiiChartContainer" style="width: 45%; border: solid 1px #ccc; float: right; display: none;">
+			<div style="font-size: 12px; text-align: center; margin-top: 5px;">Pressures contribution to BSII</div>
+			<div id="plBsiiChart" style="width: 95%; height: 200px;"></div>
+			<div id="plBsiiChartLegend"></div>
+		</div>
+		<div id="bspiMessage" style="font-size: 16px; text-align: center; padding-top: 10px; margin-bottom: 10px; display: none; clear: both;"></div>
+		<div id="bspiChartContainer" style="border: solid 1px #ccc; display:none;">
+			<div style="font-size: 12px; text-align: center; margin-top: 5px;">Pressures contribution to BSPI</div>
+			<div id="bspiChart" style="width: 50%; height: 200px;"></div>
+			<div id="bspiChartLegend"></div>
+		</div>
+		<div id="backToSettingsBottom" class="leftPanelLink" style="padding-top: 10px; margin-bottom: 10px; float: right; font-size: 12px; clear: both;">Back to calculation settings</div>
+	</div>
 </div>
